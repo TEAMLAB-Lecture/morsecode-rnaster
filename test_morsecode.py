@@ -3,8 +3,9 @@
 import unittest
 import morsecode as mc
 
-from mock import patch
+from unittest.mock import patch
 from io import StringIO
+
 
 class TestMorseCode(unittest.TestCase):
 
@@ -143,7 +144,7 @@ class TestMorseCode(unittest.TestCase):
     def decoding_sentence(self, morse_sentence):
         result = []
         for character in morse_sentence.split(" "):
-            if character is not "":
+            if character != "":
                 result.append(self.decoding_character(character))
             else:
                 result.append("-")
